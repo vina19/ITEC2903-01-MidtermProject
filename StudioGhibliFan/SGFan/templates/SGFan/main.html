@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% if title %}
+		<title>Studio Ghibli Fan - {{ title }}</title>
+	{% else }
+		<title>Studio Ghibli Fan</title>
+	{% endif %}
+</head>
+<body>
+	{% block content %}{% end %}
+</body>
+</html>

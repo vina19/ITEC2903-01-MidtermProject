@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+# View inside the website
 posts = [
 	{
     "id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
@@ -232,4 +233,3 @@ def home(request):
 
 def about(request):
 	return render(request, 'SGFan/about.html', {'title' : 'About'})
-

@@ -1,16 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-	{% if title %}
-		<title>Studio Ghibli Fan - {{ title }}</title>
-	{% else }
-		<title>Studio Ghibli Fan</title>
-	{% endif %}
-</head>
-<body>
+{% extends "SGFan/main.html" %}
+{% block content %}
 	{% for post in posts %}
-		<h1>{{ post.title }}</h1>
-		<h2>{{ post.description}}</h2>
+		<article class="media content-section">
+		  <div class="media-body">
+		    <div class="article-metadata">
+		      <h2><a class="mr-2" href="#">{{ post.title }}</a></h2>
+		      <div>
+		      <img src = {{ post.image }} height=300 width=220>
+		  	  </div>
+		      <small class="text-muted">{{ post.description }}</small>
+		    </div>
+		    <p class="article-content"> Director: {{ post.director }}</p>
+		    <p class="article-content"> Producer: {{ post.producer }}</p>
+		    <p class="article-content"> Rate score: {{ post.rt_score }}</p>
+		  </div>
+		</article>
 	{% endfor %}
-</body>
-</html>
+{% endblock content %}

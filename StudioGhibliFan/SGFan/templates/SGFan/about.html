@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	{% if title %}
-		<title>Studio Ghibli Fan - {{ title }}</title>
-	{% else }
-		<title>Studio Ghibli Fan</title>
-	{% endif %}
-</head>
-<body>
+{% extends "SGFan/main.html" %}
+{% block content %}
 	<h1>SG about!</h1>
-</body>
-</html>
+{% endblock content %}

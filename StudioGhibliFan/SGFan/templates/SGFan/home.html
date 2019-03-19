@@ -1,18 +1,12 @@
 {% extends "SGFan/main.html" %}
 {% block content %}
+	<h1>Studio Ghibli Movies</h1><br/>
 	{% for movie in object_list %}
 		<article class="media content-section">
 			<div class="media-body">
 				<div class="article-metadata">
-					<h2><a class="mr-2" href="#">{{ movie.title }}</a></h2>
-		      		<div>
-		      			<img src = "{{ movie.image.url }}" class = 'img-responsive' height=300 width=220>
-		  	  		</div>
-		      		<small class="text-muted">{{ movie.description }} </small>
-		    	</div>
-		    	<p class="article-content"> Director: {{ movie.director }} </p>
-		    	<p class="article-content"> Producer: {{ movie.producer }}</p>
-		    	<p class="article-content"> Released year: {{ movie.release_date }} </p>
+					<h2><a class="mr-2" href='{{ movie.get_absolute_url }}'><img src= "https://images-na.ssl-images-amazon.com/images/I/51VQ8gegp6L._SL1045_.jpg" height= 50 width=40> {{ movie.title }}</a></h2>
+		      	</div>
 			</div>
 		</article>
 	{% endfor %}

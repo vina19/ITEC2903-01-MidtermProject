@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 from django.db import models
+from django.urls import reverse
 
 #Put what data we want in database
 #class SGMovies inherit from models.Model
@@ -16,6 +17,9 @@ class SGMovies(models.Model):
 
 	def __str__(self):
 		return self.title
+
+	def get_absolute_url(self):
+		return reverse("StudioGhibli-Detail", kwargs={"id": self.id})
 
 	class Meta:
 		ordering = ["-title", "-image"]

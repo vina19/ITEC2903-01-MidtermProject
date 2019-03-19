@@ -6,9 +6,6 @@ from django.http import HttpResponse
 
 # View inside the website
 #def home request, and return a respond with home.html
-def home(request):
-	return HttpResponse("<h1>list</h1>")
-
 def movie_create(request):
 	# return render(request, 'SGFan/about.html', {'title' : 'About'})
 	return HttpResponse("<h1>create</h1>")
@@ -25,6 +22,7 @@ def movie_detail(request, id=None):
 def movie_list(request):
 	# return render(request, 'SGFan/about.html', {'title' : 'About'})
 	queryset = SGMovies.objects.all()
+
 	context = {
 		"object_list":queryset
 	}

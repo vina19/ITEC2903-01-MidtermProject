@@ -1,12 +1,17 @@
+{% extends "SGFan/main.html" %}
 {% block content %}
-	<h1>{{ title }}</h1>
-
-	<div>
-		<img src = "{{ instance.image.url }}" class = 'img-responsive' height=300 width=220>
-	</div><br/>
-	{{ instance.description }}<br/>
-	{{ instance.director }}<br/>
-	{{ instance.producer }}<br/>
-	{{ instance.release_date }}<br/>
-
+	<article class="media content-section">
+		<div class="media-body">
+			<div class="article-metadata">
+				<h2>{{ title }}</h2>
+		      	<div>
+		      		<img src = "{{ instance.image.url }}" class = 'img-responsive' height=300 width=220>
+		  	  	</div>
+		      	<small class="text-muted">{{ instance.description }} </small>
+		    </div>
+		    <p class="article-content"> Director: {{ instance.director }} </p>
+		    <p class="article-content"> Producer: {{ instance.producer }}</p>
+		    <p class="article-content"> Released year: {{ instance.release_date }} </p>
+		</div>
+	</article>
 {% endblock content %}

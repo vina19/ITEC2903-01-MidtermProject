@@ -1,0 +1,12 @@
+{% block content %}
+	<h1>{{ title }}</h1>
+
+	<div>
+		<img src = "{{ instance.image.url }}" class = 'img-responsive' height=300 width=220>
+	</div><br/>
+	{{ instance.description }}<br/>
+	{{ instance.director }}<br/>
+	{{ instance.producer }}<br/>
+	{{ instance.release_date }}<br/>
+
+{% endblock content %}

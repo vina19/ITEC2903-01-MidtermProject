@@ -1,0 +1,11 @@
+{% extends "SGFan/main.html" %}
+{% block content %}
+	<h1>Adding more Studio Ghibli movies</h1><br/>
+
+	<!-- csrf_token to validate the data that we post to our website if it's a good data or data that we want  -->
+	<form method='POST' action=''>{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value='Add Movie' />
+	</form>
+
+{% endblock content %}

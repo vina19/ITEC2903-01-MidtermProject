@@ -22,7 +22,7 @@ from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^studioghibli/', include("SGFan.urls")),
+    url(r'^', include("SGFan.urls")),
 
 ]
 

@@ -4,6 +4,7 @@ from .models import SGMovies
 from django.db.models import Q
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import SGMoviesForm
+from django.views.generic import RedirectView
 
 # View inside the website
 #def home request, and return a respond with home.html
@@ -63,14 +64,3 @@ def movie_update(request, id=None):
 		"form" : form
 	}
 	return render(request, "SGFan/movie_detail.html", context)
-
-
-def movie_delete(request, id=None):
-	instance = get_object_or_404(SGMovies, id=id)
-	instance.delete()
-	return redirect("SGFan:list")
-
-
-
-
-	

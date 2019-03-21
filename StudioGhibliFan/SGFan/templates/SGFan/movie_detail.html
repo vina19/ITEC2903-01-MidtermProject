@@ -12,12 +12,16 @@
 		    <p class="article-content"> Director: {{ instance.director }} </p>
 		    <p class="article-content"> Producer: {{ instance.producer }}</p>
 		    <p class="article-content"> Released year: {{ instance.release_date }} </p>
+		    <p class="article-content"> Likes: {{ instance.likes.count }} </p>
+		</div>
+	</article>
 
-		    <form method='POST' action='edit/'>{% csrf_token %}
+	<article class="media content-section">
+		<div class="media-body">
+			<form method='POST' action='edit/'>{% csrf_token %}
 			{{ form.as_p }}
 			<input type="submit" value='Edit Movie' />
 			</form>
-
 		</div>
 	</article>
 {% endblock content %}

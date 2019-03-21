@@ -1,11 +1,17 @@
 from django.conf.urls import url
 from django.contrib import admin
-from . import views
+from .views import (
+	movie_list,
+	movie_create,
+	movie_detail,
+	movie_update,
+	movie_delete,
+	)
 
 urlpatterns = [
-    url(r'^$', views.movie_list, name='StudioGhibli-List'),
-    url(r'^create/$', views.movie_create, name='StudioGhibli-Create'),
-    url(r'^(?P<id>\d+)/$', views.movie_detail, name='StudioGhibli-Detail'),
-   	url(r'^(?P<id>\d+)/edit/$', views.movie_update, name='StudioGhibli-Update'),
-   	url(r'^delete/$', views.movie_delete, name='StudioGhibli-Delete'),
+    url(r'^$', movie_list, name='list'),
+    url(r'^create/$', movie_create, name='create'),
+    url(r'^(?P<id>\d+)/$', movie_detail, name='detail'),
+   	url(r'^(?P<id>\d+)/edit/$', movie_update, name='update'),
+   	url(r'^(?P<id>\d+)/delete/$', movie_delete, name='delete'),
 ]

@@ -1,6 +1,13 @@
-{% extends "SGFan/main.html" %}
+<!-- {% extends "SGFan/main.html" %}
 {% block content %}
 	<h1>Studio Ghibli Movies</h1><br/>
+	<div class="navbar-nav">
+		<form method='GET' action = '' >
+			<input name = 'q' value='{{ request.GET.q }}' type= 'text'  placeholder='Search movies'  />
+			<input type='submit' value='Search'/>
+		</form>
+	</div>
+
 	{% for movie in object_list %}
 		<article class="media content-section">
 			<div class="media-body">
@@ -10,4 +17,4 @@
 			</div>
 		</article>
 	{% endfor %}
-{% endblock content %}
+{% endblock content %} -->

@@ -28,16 +28,15 @@
 				</button>
 	      		<div class="collapse navbar-collapse" id="navbarToggle">
 	        		<div class="navbar-nav mr-auto">
-	          			<a class="nav-item nav-link" href="{% url 'StudioGhibli-List' %}">Home</a>
-	          			<a class="nav-item nav-link" href="{% url 'StudioGhibli-Create' %}">Create</a>
-	        		</div>
-	        		<!-- Navbar Right Side -->
-	        		<div class="navbar-nav">
-	          			<form method='GET' action = ''>
-	          				<input type= 'text' name = 'q' placeholder='Search movies'/>
-	          				<input type='submit' value='Search'/>
-	          			</form>
-	        		</div>
+	          			<a class="nav-item nav-link" href="{% url 'list' %}">Home</a>
+	          			<a class="nav-item nav-link" href="{% url 'create' %}">Create</a>
+	        		</div>	
+	      		</div>
+				<div class="navbar-nav">
+	      			<form method='GET' action = '' >
+	      				<input name = 'q' value='{{ request.GET.q }}' type= 'text'  placeholder='Search movies'  />
+	      				<input type='submit' value='Search'/>
+	      			</form>
 	      		</div>
 	    	</div>
 	  	</nav>
@@ -47,20 +46,18 @@
 	<main role="main" class="container">
 		<div class="row">
 	    	<div class="col-md-8">
-	      		{% block content %}{% endblock %}
-	    	</div>
-	    	<div class="col-md-4">
-	      		<div class="content-section">
-	        		<h3>Our Sidebar</h3>
-	        		<p class='text-muted'>You can put any information here you'd like.
-	          			<ul class="list-group">
-	            			<li class="list-group-item list-group-item-light">Latest Posts</li>
-	            			<li class="list-group-item list-group-item-light">Announcements</li>
-	            			<li class="list-group-item list-group-item-light">Calendars</li>
-	            			<li class="list-group-item list-group-item-light">etc</li>
-	          			</ul>
-	        		</p>
-	      		</div>
+	      		{% block content %}
+	      			<h1>Studio Ghibli Movies</h1><br/>
+	      			{% for movie in object_list %}
+	      				<article class="media content-section">
+	      					<div class="media-body">
+	      					<div class="article-metadata">
+	      						<h2><a class="mr-2" href='{{ movie.get_absolute_url }}'><img src= "https://images-na.ssl-images-amazon.com/images/I/51VQ8gegp6L._SL1045_.jpg" height= 50 width=40> {{ movie.title }}</a></h2>
+	      					</div>
+	      					</div>
+	      				</article>
+	      			{% endfor %}
+	      		{% endblock %}
 	    	</div>
 	  	</div>
 	</main>

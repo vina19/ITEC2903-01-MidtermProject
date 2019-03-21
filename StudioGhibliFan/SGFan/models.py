@@ -19,8 +19,5 @@ class SGMovies(models.Model):
 		return self.title
 
 	def get_absolute_url(self):
-		return reverse("StudioGhibli-Detail", kwargs={"id": self.id})
-
-	class Meta:
-		ordering = ["-title", "-image"]
+		return reverse("detail", kwargs={"id": self.id})
 

@@ -13,10 +13,11 @@
 		    <p class="article-content"> Producer: {{ instance.producer }}</p>
 		    <p class="article-content"> Released year: {{ instance.release_date }} </p>
 
-		    <form method='POST' action=''>{% csrf_token %}
+		    <form method='POST' action='edit/'>{% csrf_token %}
 			{{ form.as_p }}
 			<input type="submit" value='Edit Movie' />
 			</form>
+
 		</div>
 	</article>
 {% endblock content %}
